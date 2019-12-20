@@ -1,0 +1,12 @@
+name: html-widget-plotly-test
+title: html-widget-plotly-test
+username: james
+account: james
+server: colorado.rstudio.com
+hostUrl: https://colorado.rstudio.com/rsc/__api__
+appId: 4029
+bundleId: 32677
+url: https://colorado.rstudio.com/rsc/content/4029/
+when: 1576869318.49548
+asMultiple: FALSE
+asStatic: FALSE

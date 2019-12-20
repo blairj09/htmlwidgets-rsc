@@ -1,0 +1,30 @@
+---
+title: "HTML Widget Test"
+output: 
+  html_document
+---
+
+
+### Single Plotly Widget
+```{r}
+htmltools::tags$iframe(
+  src = "plotly-widget.html",
+  scrolling = "no",
+  seamless = "seamless",
+  frameBorder = "0",
+  height = 400,
+  width = 800
+)
+```
+
+### Crosstalk Widget
+```{r}
+htmltools::tags$iframe(
+  src = "crosstalk-widget.html",
+  scrolling = "no",
+  seamless = "seamless",
+  frameBorder = "0",
+  height = 400,
+  width = 800
+)
+```

@@ -1,0 +1,4 @@
+html-widget-test.Rmd
+crosstalk-widget.html
+plotly-widget.html
+lib
