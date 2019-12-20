@@ -5,14 +5,14 @@ library(plotly)
 library(crosstalk)
 
 # Plotly widget ----
-x = 2:12 
-y = 2:12
-df = as.data.frame(cbind(x,y))
+x <- 2:12 
+y <- 2:12
+df <- data.frame(x = x, y = y) 
 
-reprex.plot = plot_ly(df, x = x, y = y)
+simple_plot = plot_ly(df, x = ~x, y = ~y)
 
 # Save ----
-htmlwidgets::saveWidget(partial_bundle(reprex.plot), "plotly-widget.html", selfcontained = FALSE, libdir = "lib")
+htmlwidgets::saveWidget(partial_bundle(simple_plot), "plotly-widget.html", selfcontained = FALSE, libdir = "lib")
 
 # Crosstalk widget ----
 # Reference: https://github.com/ramnathv/htmlwidgets/issues/266
