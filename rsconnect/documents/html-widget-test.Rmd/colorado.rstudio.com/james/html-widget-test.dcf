@@ -5,6 +5,8 @@ account: james
 server: colorado.rstudio.com
 hostUrl: https://colorado.rstudio.com/rsc/__api__
 appId: 4028
-bundleId: 32678
+bundleId: 32687
 url: https://colorado.rstudio.com/rsc/content/4028/
-when: 1576869476.4771
+when: 1576969517.63525
+asMultiple: FALSE
+asStatic: FALSE

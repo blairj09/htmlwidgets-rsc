@@ -1,0 +1,12 @@
+name: plotly-only-self-contained
+title: plotly-only-self-contained
+username: james
+account: james
+server: colorado.rstudio.com
+hostUrl: https://colorado.rstudio.com/rsc/__api__
+appId: 4032
+bundleId: 32689
+url: https://colorado.rstudio.com/rsc/content/4032/
+when: 1576969931.58946
+asMultiple: FALSE
+asStatic: FALSE

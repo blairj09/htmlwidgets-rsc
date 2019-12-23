@@ -1,0 +1,12 @@
+name: self-contained-widget-test
+title: self-contained-widget-test
+username: james
+account: james
+server: colorado.rstudio.com
+hostUrl: https://colorado.rstudio.com/rsc/__api__
+appId: 4033
+bundleId: 32711
+url: https://colorado.rstudio.com/rsc/content/4033/
+when: 1577126474.29413
+asMultiple: FALSE
+asStatic: FALSE
