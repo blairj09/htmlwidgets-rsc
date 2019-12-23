@@ -2,7 +2,21 @@
 title: "HTML Widget Test"
 output: 
   html_document
+resource_files:
+  - plotly-widget.html
+  - crosstalk-widget.html
+  - lib
 ---
+
+Note: This pattern *does not work* due to the restriction that RStudio Connect
+has on output files, namely that they must all be in the working directory of
+the document, not in subdirectories.
+
+```{r, include = FALSE}
+widget_files <- c("crosstalk-widget.html", "plotly-widget.html")
+lib_files <- list.files(path = "lib", recursive = TRUE, full.names = TRUE)
+rmarkdown::output_metadata$set(rsc_output_files = c(widget_files, lib_files))
+```
 
 
 ### Single Plotly Widget
@@ -12,8 +26,7 @@ htmltools::tags$iframe(
   scrolling = "no",
   seamless = "seamless",
   frameBorder = "0",
-  height = 400,
-  width = 800
+  sandbox = "allow-scripts allow-same-origin allow-top-navigation allow-forms allow-popups allow-pointer-lock allow-popups-to-escape-sandbox"
 )
 ```
 
@@ -24,7 +37,28 @@ htmltools::tags$iframe(
   scrolling = "no",
   seamless = "seamless",
   frameBorder = "0",
-  height = 400,
-  width = 800
+  sandbox = "allow-scripts allow-same-origin allow-top-navigation allow-forms allow-popups allow-pointer-lock allow-popups-to-escape-sandbox"
 )
 ```
+
+### Widget rendered in RMD
+```{r}
+library(plotly)
+library(crosstalk)
+
+shared_mtcars <- SharedData$new(mtcars)
+
+p1 <- plot_ly(data = shared_mtcars, x = ~wt, y = ~mpg)
+p2 <- plot_ly(data = shared_mtcars, x = ~hp, y = ~qsec)
+
+bscols(widths = c(3, NA, NA),
+       list(
+         filter_checkbox("cyl", "Cylinders", shared_mtcars, ~cyl, inline = TRUE),
+         filter_slider("hp", "Horsepower", shared_mtcars, ~hp, width = "100%"),
+         filter_select("auto", "Automatic", shared_mtcars, ~ifelse(am == 0, "Yes", "No"))
+       ),
+       p1,
+       p2
+)
+```
+
