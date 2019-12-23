@@ -9,10 +9,11 @@ x <- 2:12
 y <- 2:12
 df <- data.frame(x = x, y = y) 
 
-simple_plot = plot_ly(df, x = ~x, y = ~y)
+simple_plot <- plot_ly(df, x = ~x, y = ~y)
 
 # Save ----
 htmlwidgets::saveWidget(partial_bundle(simple_plot), "plotly-widget.html", selfcontained = FALSE, libdir = "lib")
+htmlwidgets::saveWidget(partial_bundle(simple_plot), "plotly-self-contained-widget.html", selfcontained = TRUE)
 
 # Crosstalk widget ----
 # Reference: https://github.com/ramnathv/htmlwidgets/issues/266
@@ -33,5 +34,4 @@ combined <- bscols(widths = c(3, NA, NA),
 )
 
 # Save ----
-# htmltools::save_html(combined, "crosstalk-widget.html")
 htmltools::save_html(combined, "crosstalk-widget.html", libdir = "lib")

@@ -1,0 +1,21 @@
+---
+title: "Self Contained Widget"
+output: html_document
+rmd_output_metadata:
+  rsc_output_files:
+    - plotly-self-contained-widget.html
+resource_files:
+  - plotly-self-contained-widget.html
+---
+
+### Single Plotly Self-Contained Widget
+```{r}
+htmltools::tags$iframe(
+  src = "plotly-self-contained-widget.html",
+  scrolling = "no",
+  seamless = "seamless",
+  frameBorder = "0",
+  width = 800,
+  height = 500
+)
+```
